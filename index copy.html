@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Jekofly | Flight Booking, Hotels & Visa Services</title>
+    <meta name="description" content="Book flights, hotels, and visa services seamlessly with Jekofly. Travel made simple and stress-free.">
+    <meta name="keywords" content="flight booking, hotel reservation, visa processing, travel agency">
+    <meta name="author" content="Jekofly">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#f97316'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- NAVIGATION -->
+<nav id="navbar" class="bg-white shadow-sm fixed w-full z-50 transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+
+            <div class="flex items-center">
+                <i class="fas fa-plane-departure text-primary text-2xl mr-2"></i>
+                <span class="text-xl font-bold text-gray-900">Jekofly</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex md:space-x-8">
+                <button onclick="scrollToSection('home')" class="text-gray-900 border-b-2 border-primary text-sm font-medium">Home</button>
+                <button onclick="scrollToSection('services')" class="text-gray-500 hover:text-gray-700 text-sm font-medium">Services</button>
+                <button onclick="scrollToSection('about')" class="text-gray-500 hover:text-gray-700 text-sm font-medium">About</button>
+                <button onclick="scrollToSection('contact')" class="text-gray-500 hover:text-gray-700 text-sm font-medium">Contact</button>
+            </div>
+
+            <div class="hidden md:flex items-center">
+                <button class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm">Sign In</button>
+                <button class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-sm">Register</button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex flex-col space-y-4 mt-4 pb-4 md:hidden">
+            <button onclick="scrollToSection('home')">Home</button>
+            <button onclick="scrollToSection('services')">Services</button>
+            <button onclick="scrollToSection('about')">About</button>
+            <button onclick="scrollToSection('contact')">Contact</button>
+        </div>
+    </div>
+</nav>
+<section id="home" class="hero-bg pt-24 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        Your Journey Starts Here
+                        <span class="gradient-text">With Jekofly</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-600 max-w-lg">
+                        Book flights, reserve hotels, and process visas seamlessly with our all-in-one travel platform. 
+                        Make travel simple and stress-free.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-lg text-base font-medium transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Book Now
+                        </button>
+                        <button class="border-2 border-gray-300 hover:border-primary text-gray-700 px-8 py-4 rounded-lg text-base font-medium transition duration-300 hover:bg-primary hover:text-white">
+                            Learn More
+                        </button>
+                    </div>
+                    <div class="mt-10 flex items-center space-x-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check-circle text-green-600"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-medium">10M+ Happy Customers</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-globe-americas text-blue-600"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600 font-medium">500+ Destinations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-full h-full bg-accent rounded-lg opacity-10 floating"></div>
+                        <div class="relative bg-white rounded-xl shadow-xl p-8 border border-gray-100">
+                            <div class="flex justify-between items-center mb-6">
+                                <h3 class="font-semibold text-gray-900 text-xl">Flight Search</h3>
+                                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">One-way</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-500 mb-1">From</label>
+                                        <input type="text" placeholder="City or airport" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-500 mb-1">To</label>
+                                        <input type="text" placeholder="City or airport" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-500 mb-1">Departure</label>
+                                        <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-500 mb-1">Return</label>
+                                        <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-gray-500 mb-1">Passengers</label>
+                                        <select class="w-full sm:w-48 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <option>1 Passenger</option>
+                                            <option>2 Passengers</option>
+                                            <option>3 Passengers</option>
+                                            <option>4 Passengers</option>
+                                        </select>
+                                    </div>
+                                    <button class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-md text-sm font-medium transition duration-300 w-full sm:w-auto">
+                                        Search Flights
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Comprehensive Services</h2>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Everything you need for a seamless travel experience, all in one place
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Flight Booking -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-plane text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Flight Booking</h3>
+                    <p class="text-gray-600 mb-4">
+                        Compare prices and book flights with ease. Find the best deals on domestic and international routes.
+                    </p>
+                    <button class="text-primary hover:text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+
+                <!-- Hotel Reservations -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-hotel text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Hotel Reservations</h3>
+                    <p class="text-gray-600 mb-4">
+                        Find the perfect accommodation for your stay. From luxury resorts to budget-friendly options.
+                    </p>
+                    <button class="text-primary hover:text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+
+                <!-- Visa Processing -->
+                <div class="feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-passport text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Visa Processing</h3>
+                    <p class="text-gray-600 mb-4">
+                        Simplify your visa application process with our expert guidance and support services.
+                    </p>
+                    <button class="text-primary hover:text-secondary font-medium flex items-center">
+                        Learn more
+                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="transform hover:scale-105 transition duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-white">10M+</div>
+                    <div class="text-blue-100 mt-2">Happy Customers</div>
+                </div>
+                <div class="transform hover:scale-105 transition duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-white">500+</div>
+                    <div class="text-blue-100 mt-2">Destinations</div>
+                </div>
+                <div class="transform hover:scale-105 transition duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-white">24/7</div>
+                    <div class="text-blue-100 mt-2">Support</div>
+                </div>
+                <div class="transform hover:scale-105 transition duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-white">99%</div>
+                    <div class="text-blue-100 mt-2">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <div class="relative">
+                        <div class="bg-white rounded-xl shadow-lg p-6">
+                            <img src="https://images.unsplash.com/photo-1503220317375-aaad663c1832?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Travel" class="rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Jekofly?</h2>
+                    <p class="mt-6 text-lg text-gray-600">
+                        Jekofly is your trusted partner for all travel needs. We combine technology with personalized service to make your journey unforgettable.
+                    </p>
+                    <div class="mt-8 space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-medium text-gray-900">Best Price Guarantee</h4>
+                                <p class="mt-1 text-gray-600">We ensure you get the lowest possible prices on flights and hotels.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-medium text-gray-900">24/7 Customer Support</h4>
+                                <p class="mt-1 text-gray-600">Our dedicated team is always ready to assist with any travel queries.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-medium text-gray-900">Easy Cancellation</h4>
+                                <p class="mt-1 text-gray-600">Flexible policies for both bookings and visa applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <button class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                            Learn More About Us
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get In Touch</h2>
+                <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Have questions? Our team is here to help you with all your travel needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="animate-fade-in">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-3 px-6 rounded-md font-medium transition duration-300 shadow-md hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="animate-fade-in">
+                    <div class="bg-gray-50 rounded-xl p-8 h-full">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Our Location</h4>
+                                    <p class="mt-2 text-gray-600">123 Travel Street, City, Country</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                                        <i class="fas fa-phone-alt text-white text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Phone Number</h4>
+                                    <p class="mt-2 text-gray-600">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                                        <i class="fas fa-envelope text-white text-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Email Address</h4>
+                                    <p class="mt-2 text-gray-600">support@jekofly.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6">
+                                <h4 class="text-lg font-medium text-gray-900 mb-4">Business Hours</h4>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                        <span>Monday - Friday</span>
+                                        <span class="font-medium">9:00 AM - 6:00 PM</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                        <span>Saturday</span>
+                                        <span class="font-medium">10:00 AM - 4:00 PM</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <span>Sunday</span>
+                                        <span class="font-medium text-gray-500">Closed</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-plane-departure text-primary text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Jekofly</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Making travel simple and accessible for everyone around the world.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Flight Booking</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Hotel Reservations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Visa Processing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Car Rentals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Travel Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to get special offers and travel tips.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-3 w-full rounded-l-md focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-primary hover:bg-secondary px-4 py-3 rounded-r-md transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Jekofly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<!-- SCRIPTS -->
+<script>
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Mobile menu
+document.getElementById('mobile-menu-button')
+.addEventListener('click', function() {
+    document.getElementById('mobile-menu')
+    .classList.toggle('hidden');
+});
+
+// Navbar shadow
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 20) {
+        nav.classList.add('shadow-md');
+    } else {
+        nav.classList.remove('shadow-md');
+    }
+});
+
+// Animation on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card').forEach(card => {
+        observer.observe(card);
+    });
+});
+</script>
+
+</body>
+</html>

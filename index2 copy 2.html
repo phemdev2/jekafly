@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEKAFLY® | Your Journey. Simplified.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a', /* Slate 900 */
+                        brand: '#1e3a8a',   /* Deep Aviation Blue */
+                        action: '#2563eb',  /* Action Blue */
+                        accent: '#f97316'   /* Movement Orange */
+                    },
+                    letterSpacing: {
+                        ultra: '.2em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.05) 0%, transparent 40%);
+        }
+
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #2563eb;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width .3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900">
+
+    <!-- Premium Navigation -->
+    <nav class="glass-nav fixed w-full z-[100] border-b border-gray-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-12">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="bg-brand p-1.5 rounded-lg">
+                            <i class="fas fa-plane-departure text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-extrabold tracking-tighter text-brand italic">JEKAFLY<span class="text-xs align-top ml-0.5">®</span></span>
+                    </a>
+                    <div class="hidden lg:flex items-center space-x-8">
+                        <button onclick="scrollToSection('home')" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-600">Home</button>
+                        <button onclick="scrollToSection('services')" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-600">Modules</button>
+                        <button onclick="scrollToSection('about')" class="nav-link text-xs font-bold uppercase tracking-widest text-slate-600">The Brand</button>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <a href="tel:+2348186537678" class="hidden md:flex flex-col items-end mr-4">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase">Support Line</span>
+                        <span class="text-xs font-bold text-brand">+234 818 653 7678</span>
+                    </a>
+                    <button class="bg-brand text-white px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest hover:bg-action hover:scale-105 transition-all shadow-lg shadow-brand/20">
+                        Inquire Now
+                    </button>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-brand">
+                        <i class="fas fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-100 absolute w-full left-0 px-6 py-8 shadow-2xl animate-fade-in">
+            <div class="flex flex-col space-y-6">
+                <button onclick="scrollToSection('home')" class="text-left font-black uppercase tracking-widest text-sm">01. Home</button>
+                <button onclick="scrollToSection('services')" class="text-left font-black uppercase tracking-widest text-sm">02. Service Modules</button>
+                <button onclick="scrollToSection('about')" class="text-left font-black uppercase tracking-widest text-sm">03. Corporate Info</button>
+                <button onclick="scrollToSection('contact')" class="text-left font-black uppercase tracking-widest text-sm text-brand underline underline-offset-8">Book Consultation</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="hero-gradient pt-40 pb-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center px-3 py-1 bg-brand/5 border border-brand/10 text-brand text-[10px] font-black uppercase tracking-ultra rounded-full mb-8">
+                        <span class="relative flex h-2 w-2 mr-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand"></span>
+                        </span>
+                        A Kazwhale Concepts Platform
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-black text-primary leading-[0.9] mb-8 tracking-tighter">
+                        Elevate Your <br><span class="text-action">Travel Strategy.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-500 mb-12 max-w-xl leading-relaxed font-medium">
+                        Structured, aviation-forward travel facilitation. We bridge the gap between global destinations and seamless logistics.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('services')" class="bg-primary text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-brand transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-primary/30">
+                            Explore Service Ecosystem
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <div class="flex items-center gap-4 px-6 py-2 border border-slate-200 rounded-2xl bg-white/50">
+                            <div class="flex -space-x-3">
+                                <img src="https://ui-avatars.com/api/?name=AK&background=1e3a8a&color=fff" class="w-8 h-8 rounded-full border-2 border-white">
+                                <img src="https://ui-avatars.com/api/?name=KC&background=2563eb&color=fff" class="w-8 h-8 rounded-full border-2 border-white">
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Consulting<br><span class="text-slate-900">Adewale Kasali</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abstract Visual -->
+                <div class="lg:col-span-5 relative hidden lg:block">
+                    <div class="absolute -top-20 -right-20 w-96 h-96 bg-brand opacity-10 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="relative z-10 animate-float">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Aviation" 
+                             class="rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-8 border-white">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 max-w-[200px]">
+                            <p class="text-[10px] font-black text-brand uppercase tracking-widest mb-2">Notice</p>
+                            <p class="text-[11px] leading-snug font-medium text-slate-500">Subject to Third-Party Airline Terms and Visa Approval.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modular Ecosystem Section -->
+    <section id="services" class="py-32 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-brand text-xs font-black uppercase tracking-ultra mb-4">Module Catalog</h2>
+                    <h3 class="text-4xl md:text-5xl font-black text-primary uppercase tracking-tighter leading-none">Service Modules</h3>
+                </div>
+                <div class="bg-slate-100 h-px flex-grow mx-8 hidden lg:block"></div>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Digital Solutions by Kazwhale Concepts</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- JEKAFLY Flights -->
+                <div class="service-card group bg-gray-50/50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-white shadow-inner rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand transition-colors duration-500">
+                            <i class="fas fa-plane-up text-brand text-xl group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Flights</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium mb-8">Professional booking & flight facilitation via global carrier partners.</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/60">
+                        <span class="text-[9px] font-black text-brand uppercase tracking-widest">01. Licensed Facilitator</span>
+                    </div>
+                </div>
+
+                <!-- JEKAFLY Visa -->
+                <div class="service-card group bg-gray-50/50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-white shadow-inner rounded-2xl flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
+                            <i class="fas fa-id-card-clip text-accent text-xl group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Visa</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium mb-8">End-to-end documentation support and submission assistance.</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/60">
+                        <span class="text-[9px] font-black text-accent uppercase tracking-widest">02. Expert Liaison</span>
+                    </div>
+                </div>
+
+                <!-- JEKAFLY Stay -->
+                <div class="service-card group bg-gray-50/50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-white shadow-inner rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-900 transition-colors duration-500">
+                            <i class="fas fa-hotel text-blue-900 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Stay</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium mb-8">Sourcing verified premium hotel & hospitality accommodations globally.</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/60">
+                        <span class="text-[9px] font-black text-blue-900 uppercase tracking-widest">03. Verified Partners</span>
+                    </div>
+                </div>
+
+                <!-- JEKAFLY Consult -->
+                <div class="service-card group bg-gray-50/50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 bg-white shadow-inner rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-700 transition-colors duration-500">
+                            <i class="fas fa-briefcase text-purple-700 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Consult</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium mb-8">Bespoke advisory, corporate relocation and itinerary planning.</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/60">
+                        <span class="text-[9px] font-black text-purple-700 uppercase tracking-widest">04. Advisor Status</span>
+                    </div>
+                </div>
+
+                <!-- JEKAFLY Holidays -->
+                <div class="service-card group bg-gray-50/50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between lg:col-span-1 md:col-span-2 xl:col-span-1">
+                    <div>
+                        <div class="w-16 h-16 bg-white shadow-inner rounded-2xl flex items-center justify-center mb-8 group-hover:bg-emerald-600 transition-colors duration-500">
+                            <i class="fas fa-umbrella-beach text-emerald-600 text-xl group-hover:text-white"></i>
+                        </div>
+                        <h4 class="text-sm font-black text-primary uppercase tracking-widest mb-4">Holidays</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed font-medium mb-8">Tailored luxury tours and destination experiences curated with precision.</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200/60">
+                        <span class="text-[9px] font-black text-emerald-600 uppercase tracking-widest">05. Managed Leisure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Architecture Section -->
+    <section id="about" class="py-24 bg-primary text-white overflow-hidden relative">
+        <div class="absolute right-0 top-0 opacity-10 pointer-events-none">
+            <i class="fas fa-globe text-[40rem] -mr-48 -mt-24"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-brand text-xs font-black uppercase tracking-ultra mb-6">Parent Entity</h2>
+                    <h3 class="text-4xl font-extrabold uppercase tracking-tighter mb-8 leading-tight">Brand Hierarchy & <br>Market Integrity</h3>
+                    <p class="text-slate-400 font-medium leading-relaxed mb-12 max-w-lg">
+                        JEKAFLY® operates as a core brand under the umbrella of <strong>Kazwhale Concepts Limited</strong>. We maintain total transparency in travel facilitation, adhering to international compliance and partner airline regulations.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <i class="fas fa-circle-check text-action"></i>
+                            <span class="text-sm font-bold uppercase tracking-wider text-slate-200">RC: [Registered Company Profile]</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-2xl">
+                            <i class="fas fa-shield-halved text-action"></i>
+                            <span class="text-sm font-bold uppercase tracking-wider text-slate-200">Legal Management by Kazwhale Concepts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-primary p-12 rounded-[2.5rem] border border-slate-700 shadow-3xl">
+                    <div class="mb-12">
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Our Core Value</h4>
+                        <p class="text-2xl font-light italic leading-relaxed text-slate-300 italic">
+                            "Building a reliable digital bridge for travelers by ensuring logistics never get in the way of ambition."
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-3xl font-black text-brand mb-1">99%</div>
+                            <div class="text-[10px] uppercase font-black text-slate-500 tracking-ultra">Support Hub</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-brand mb-1">Active</div>
+                            <div class="text-[10px] uppercase font-black text-slate-500 tracking-ultra">Consultancy</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-black text-brand mb-1">Global</div>
+                            <div class="text-[10px] uppercase font-black text-slate-500 tracking-ultra">Facilitation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unified Contact Hub -->
+    <section id="contact" class="py-32 bg-[#fafafa]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div>
+                    <h2 class="text-brand text-xs font-black uppercase tracking-ultra mb-6">Partnerships</h2>
+                    <h3 class="text-5xl font-black text-primary uppercase tracking-tighter mb-12">Connect With <br>Management.</h3>
+                    
+                    <div class="grid grid-cols-1 gap-4 mb-12">
+                        <a href="mailto:kazwhaleconcepts@gmail.com" class="group flex items-center p-8 bg-white border border-slate-100 rounded-[2rem] hover:border-brand transition-all shadow-sm">
+                            <div class="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fas fa-envelope text-brand text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">E-Mail Portfolio</p>
+                                <p class="text-base font-bold text-primary group-hover:text-brand transition-colors">kazwhaleconcepts@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/2348186537678" class="group flex items-center p-8 bg-white border border-slate-100 rounded-[2rem] hover:border-emerald-500 transition-all shadow-sm">
+                            <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mr-6">
+                                <i class="fab fa-whatsapp text-emerald-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Instant Channel</p>
+                                <p class="text-base font-bold text-primary group-hover:text-emerald-600 transition-colors">+234 818 653 7678</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="p-8 rounded-2xl bg-brand/5 border border-brand/10">
+                        <p class="text-[11px] leading-relaxed text-slate-500 font-medium">
+                            <span class="text-brand font-black block mb-2 uppercase tracking-ultra italic">Legal Policy Disclaimer:</span>
+                            JEKAFLY® is a structured marketing identity for travel facilitation by Kazwhale Concepts Ltd. We are NOT an airline operator. Our services facilitate access to third-party travel products. Visa approval is strictly the prerogative of government embassies.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-12 rounded-[3rem] shadow-2xl border border-slate-100 relative">
+                    <form class="space-y-6 relative z-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-[10px] font-black uppercase text-slate-400 ml-1">Full Name</label>
+                                <input type="text" class="w-full mt-1 bg-slate-50 border-transparent border-b-slate-200 border rounded-2xl p-4 text-sm focus:border-brand focus:ring-0 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-black uppercase text-slate-400 ml-1">Contact Email</label>
+                                <input type="email" class="w-full mt-1 bg-slate-50 border-transparent border-b-slate-200 border rounded-2xl p-4 text-sm focus:border-brand focus:ring-0 outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-400 ml-1">Desired Module</label>
+                            <select class="w-full mt-1 bg-slate-50 border-transparent border-b-slate-200 border rounded-2xl p-4 text-sm focus:border-brand focus:ring-0 outline-none transition-all appearance-none">
+                                <option>Select Facilitation Service...</option>
+                                <option>Flight Ticket Request</option>
+                                <option>Visa Advisory</option>
+                                <option>Stay Reservation</option>
+                                <option>Global Holiday Pkg</option>
+                                <option>Corporate Consult</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-400 ml-1">Your Requirements</label>
+                            <textarea rows="4" class="w-full mt-1 bg-slate-50 border-transparent border-b-slate-200 border rounded-2xl p-4 text-sm focus:border-brand focus:ring-0 outline-none transition-all"></textarea>
+                        </div>
+                        <button class="w-full bg-primary text-white font-black py-5 rounded-2xl uppercase tracking-[0.2em] text-[10px] hover:bg-action shadow-xl hover:shadow-action/20 transition-all flex items-center justify-center gap-2 group">
+                            Submit Inquiry 
+                            <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="bg-white border-t border-slate-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="bg-brand p-1 rounded-lg">
+                            <i class="fas fa-plane-departure text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-black italic tracking-tighter text-brand uppercase">JEKAFLY®</span>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-sm mb-12 font-medium">
+                        Part of Kazwhale Concepts Limited. Optimizing the journey between intention and arrival.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center text-brand hover:bg-brand hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center text-brand hover:bg-brand hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div class="col-span-1">
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Service Pillars</h4>
+                        <ul class="space-y-3 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                            <li class="hover:text-brand cursor-pointer">Facilitated Flights</li>
+                            <li class="hover:text-brand cursor-pointer">Visa Logistics</li>
+                            <li class="hover:text-brand cursor-pointer">Premium Stays</li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1">
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-6">Management</h4>
+                        <ul class="space-y-3 text-xs font-bold text-slate-500 uppercase tracking-widest">
+                            <li class="hover:text-brand cursor-pointer">Partnerships</li>
+                            <li class="hover:text-brand cursor-pointer">Consulting</li>
+                            <li class="hover:text-brand cursor-pointer">Disclaimers</li>
+                        </ul>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="text-[10px] font-black uppercase text-brand tracking-ultra mb-4 italic">Entity Identity</h4>
+                            <p class="text-[10px] font-bold text-slate-600 leading-relaxed uppercase tracking-widest">JEKAFLY is a trademark brand registered by Kazwhale Concepts Limited.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-ultra">&copy; 2026 Kazwhale Concepts Limited. JEKAFLY — Your Journey. Simplified.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="text-[10px] font-black text-slate-400 uppercase tracking-ultra hover:text-brand transition">Terms of Facilitation</a>
+                    <a href="#" class="text-[10px] font-black text-slate-400 uppercase tracking-ultra hover:text-brand transition">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling logic
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                const offset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+              
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Mobile Menu logic
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Reveal on Scroll
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Section animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 1s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

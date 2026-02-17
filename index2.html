@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEKAFLY® | Simplified Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+                        radial-gradient(circle at 10% 80%, rgba(30, 58, 138, 0.04) 0%, transparent 50%);
+        }
+
+        .glass-nav { 
+            backdrop-filter: blur(12px); 
+            background: rgba(255, 255, 255, 0.9); 
+        }
+
+        /* Menu Link Hover Effect */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 selection:bg-blue-100">
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/2348186537678?text=Hello%20JEKAFLY,%20I'm%20interested%20in%20your%20services." 
+       target="_blank"
+       class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="glass-nav fixed w-full z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Brand -->
+            <a href="#home" class="flex items-center gap-2.5">
+                <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                    <i class="fas fa-plane-up"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tighter text-blue-900 leading-none">JEKAFLY®</span>
+                    <span class="text-[8px] font-bold uppercase tracking-[0.2em] text-slate-400">By Kazwhale Concepts</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-10 items-center">
+                <a href="#services" class="nav-link text-[11px] font-bold uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">Services</a>
+                <a href="#home" class="nav-link text-[11px] font-bold uppercase tracking-widest text-slate-500 hover:text-blue-600 transition">How it Works</a>
+                <a href="https://wa.me/2348186537678" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition shadow-xl shadow-blue-100">Consult Desk</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-slate-900" id="mobile-toggle">
+                <i class="fas fa-bars-staggered text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 p-6 flex flex-col gap-4 text-center">
+            <a href="#services" class="text-xs font-bold uppercase tracking-widest py-2">Services</a>
+            <a href="https://wa.me/2348186537678" class="bg-blue-600 text-white py-4 rounded-xl font-bold uppercase text-xs">Chat WhatsApp</a>
+        </div>
+    </nav>
+
+    <!-- Improved Hero Section -->
+    <section id="home" class="hero-gradient pt-48 pb-32">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7">
+                <h1 class="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8">
+                    Your Journey.<br/>
+                    <span class="text-blue-600 italic">Simplified.</span>
+                </h1>
+                <p class="text-lg text-slate-500 max-w-lg mb-12 font-medium">
+                    Aviation facilitation, luxury stays, and visa logistics handled by experts. No friction, just results.
+                </p>
+
+                <!-- KISS Search Mockup -->
+                <div class="flex flex-col sm:flex-row gap-3 bg-white p-2 border border-slate-100 rounded-3xl shadow-2xl max-w-xl">
+                    <div class="flex-1 px-6 py-4">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Inquiry Type</span>
+                        <select class="w-full font-bold text-sm bg-transparent outline-none appearance-none cursor-pointer">
+                            <option>Flight Booking</option>
+                            <option>Visa Assistance</option>
+                            <option>Hotel & Stay</option>
+                        </select>
+                    </div>
+                    <a href="https://wa.me/2348186537678" target="_blank" class="bg-blue-600 text-white flex items-center justify-center px-10 py-5 rounded-2xl hover:bg-slate-900 transition font-black text-xs uppercase tracking-widest">
+                        Check Availability
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 relative hidden lg:block">
+                <img src="https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&w=800&q=80" 
+                     class="rounded-[3rem] shadow-2xl border-white border-[12px]" alt="Aviation Luxury">
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-50">
+                    <i class="fas fa-check-circle text-blue-600 text-xl mb-2"></i>
+                    <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Service Identity</p>
+                    <p class="font-bold text-sm">Verified Facilitator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Hub -->
+    <section id="services" class="py-24 border-t border-slate-50 bg-slate-50/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="text-blue-600 text-[11px] font-black uppercase tracking-[0.3em] block mb-4">Module Ecosystem</span>
+            <h2 class="text-4xl font-black text-slate-900 uppercase italic tracking-tighter mb-16">The Core Services</h2>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                <a href="https://wa.me/2348186537678?text=Flight%20Inquiry" class="p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all hover:-translate-y-1">
+                    <i class="fas fa-plane-up text-blue-600 text-2xl mb-6"></i>
+                    <h3 class="font-black text-xs uppercase tracking-widest">Flights</h3>
+                </a>
+                <a href="https://wa.me/2348186537678?text=Visa%20Inquiry" class="p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all hover:-translate-y-1">
+                    <i class="fas fa-id-card text-blue-600 text-2xl mb-6"></i>
+                    <h3 class="font-black text-xs uppercase tracking-widest">Visa</h3>
+                </a>
+                <a href="https://wa.me/2348186537678?text=Hotel%20Inquiry" class="p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all hover:-translate-y-1">
+                    <i class="fas fa-bed text-blue-600 text-2xl mb-6"></i>
+                    <h3 class="font-black text-xs uppercase tracking-widest">Stay</h3>
+                </a>
+                <a href="https://wa.me/2348186537678?text=Consultation%20Inquiry" class="p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all hover:-translate-y-1">
+                    <i class="fas fa-handshake text-blue-600 text-2xl mb-6"></i>
+                    <h3 class="font-black text-xs uppercase tracking-widest">Consult</h3>
+                </a>
+                <a href="https://wa.me/2348186537678?text=Holidays%20Inquiry" class="p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all hover:-translate-y-1 col-span-2 lg:col-span-1">
+                    <i class="fas fa-umbrella-beach text-blue-600 text-2xl mb-6"></i>
+                    <h3 class="font-black text-xs uppercase tracking-widest">Holidays</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Dark Footer -->
+    <footer class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Footer Upper Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <!-- Brand Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-xs">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <span class="text-2xl font-black uppercase tracking-tighter">JEKAFLY®</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xs">
+                        The professional bridge between destinations and travelers. Modern logistics with traditional reliability.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                        <a href="https://wa.me/2348186537678" class="w-10 h-10 border border-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-whatsapp text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column: Modules -->
+                <div>
+                    <h5 class="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-8">The Modules</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium uppercase tracking-widest">
+                        <li><a href="#" class="hover:text-white transition">Facilitated Flights</a></li>
+                        <li><a href="#" class="hover:text-white transition">Visa Support</a></li>
+                        <li><a href="#" class="hover:text-white transition">Global Stays</a></li>
+                        <li><a href="#" class="hover:text-white transition">Luxury Holidays</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column: Contact -->
+                <div>
+                    <h5 class="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-8">Quick Support</h5>
+                    <div class="space-y-4 text-slate-400 text-sm font-medium tracking-wide">
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-600"></i> kazwhaleconcepts@gmail.com
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <i class="fas fa-phone text-blue-600"></i> +234 818 653 7678
+                        </p>
+                        <p class="flex items-center gap-3 italic">
+                            Lead Consultant: Adewale Kasali
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Compliance Box -->
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl">
+                    <h5 class="text-white text-[10px] font-black uppercase tracking-widest mb-4">Corporate Info</h5>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold uppercase tracking-widest">
+                        JEKAFLY® is a registered product brand under Kazwhale Concepts Limited.
+                    </p>
+                    <hr class="my-4 border-slate-800">
+                    <p class="text-[9px] text-slate-600 uppercase italic">
+                        All third-party flight operations and visa approvals are subject to official regulations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-black text-slate-600 uppercase tracking-[0.3em]">
+                    &copy; 2026 Kazwhale Concepts Limited. 
+                </p>
+                <div class="flex gap-10">
+                    <a href="#" class="text-[10px] font-bold text-slate-600 uppercase hover:text-white tracking-widest transition">Privacy Policy</a>
+                    <a href="#" class="text-[10px] font-bold text-slate-600 uppercase hover:text-white tracking-widest transition">Terms of Facilitation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle logic
+        const toggle = document.getElementById('mobile-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Hide menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

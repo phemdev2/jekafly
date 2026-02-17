@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEKAFLY® | Simplified Travel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-mesh {
+            background-color: #ffffff;
+            background-image: radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.03) 0, transparent 50%), 
+                              radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.03) 0, transparent 50%);
+        }
+        .nav-blur { backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); }
+        .whatsapp-float {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(5deg); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 selection:bg-blue-100">
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/2348186537678?text=Hello%20JEKAFLY,%20I%20would%20like%20to%20inquire%20about%20your%20travel%20services." 
+       target="_blank" 
+       class="whatsapp-float fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-green-200">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-blur fixed w-full z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tighter text-blue-900 uppercase">JEKAFLY®</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#process" class="hover:text-blue-600 transition">How it Works</a>
+                <a href="https://wa.me/2348186537678" target="_blank" class="flex items-center gap-2 bg-[#25D366]/10 text-[#128C7E] px-4 py-2 rounded-full border border-[#25D366]/20">
+                    <i class="fab fa-whatsapp"></i> Chat Live
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-mesh pt-48 pb-24">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 italic">
+                    By Kazwhale Concepts Limited
+                </div>
+                <h1 class="text-6xl lg:text-8xl font-extrabold text-slate-900 leading-tight mb-8 tracking-tighter">
+                    Travel<br/>
+                    <span class="text-blue-600">Reimagined.</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-md font-medium">
+                    Aviation facilitation made easy. Book flights, secure visas, and arrange premium stays via our digital concierge.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-200">Our Services</a>
+                    <a href="https://wa.me/2348186537678?text=Hello%20JEKAFLY,%20I'm%20on%20the%20website%20and%20need%20a%20consultation." 
+                       target="_blank" 
+                       class="bg-white border border-slate-200 px-8 py-4 rounded-xl font-bold text-sm flex items-center gap-3 hover:bg-slate-50 transition">
+                       <i class="fab fa-whatsapp text-green-500 text-lg"></i> Talk to Agent
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-2 opacity-5 -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1507034589631-9433c7bc3542?auto=format&fit=crop&w=1000&q=80" alt="Premium Travel" class="rounded-[2.5rem] shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modules -->
+    <section id="services" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+                <div>
+                    <h2 class="text-xs font-black text-blue-600 uppercase tracking-widest mb-4 italic">Available Facilitation</h2>
+                    <h3 class="text-4xl font-bold text-slate-900">Module Selection</h3>
+                </div>
+                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest border-l-2 border-blue-600 pl-4">Digital-First Concierge</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Flights -->
+                <a href="https://wa.me/2348186537678?text=Hello,%20I%20would%20like%20to%20book%20a%20FLIGHT%20with%20JEKAFLY." 
+                   target="_blank" class="p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 transition bg-white group">
+                    <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h4 class="font-bold text-sm mb-2 uppercase">Flights</h4>
+                    <p class="text-xs text-slate-500 mb-4">Routes & Tickets</p>
+                    <span class="text-[10px] text-blue-600 font-bold uppercase group-hover:underline">Chat Details</span>
+                </a>
+
+                <!-- Visa -->
+                <a href="https://wa.me/2348186537678?text=Hello,%20I%20need%20VISA%20assistance%20from%20JEKAFLY." 
+                   target="_blank" class="p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 transition bg-white group">
+                    <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h4 class="font-bold text-sm mb-2 uppercase">Visa</h4>
+                    <p class="text-xs text-slate-500 mb-4">Documentation</p>
+                    <span class="text-[10px] text-blue-600 font-bold uppercase group-hover:underline">Ask Agent</span>
+                </a>
+
+                <!-- Stay -->
+                <a href="https://wa.me/2348186537678?text=Hello,%20I'm%20looking%20for%20STAY/ACCOMMODATION%20options." 
+                   target="_blank" class="p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 transition bg-white group">
+                    <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h4 class="font-bold text-sm mb-2 uppercase">Stay</h4>
+                    <p class="text-xs text-slate-500 mb-4">Premium Hotels</p>
+                    <span class="text-[10px] text-blue-600 font-bold uppercase group-hover:underline">Inquire</span>
+                </a>
+
+                <!-- Consult -->
+                <a href="https://wa.me/2348186537678?text=Hello,%20I%20need%20to%20CONSULT%20with%20the%20JEKAFLY%20expert." 
+                   target="_blank" class="p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 transition bg-white group">
+                    <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4 class="font-bold text-sm mb-2 uppercase">Consult</h4>
+                    <p class="text-xs text-slate-500 mb-4">Expert Advice</p>
+                    <span class="text-[10px] text-blue-600 font-bold uppercase group-hover:underline">Consult Now</span>
+                </a>
+
+                <!-- Holidays -->
+                <a href="https://wa.me/2348186537678?text=Hello,%20tell%20me%20more%20about%20your%20JEKAFLY%20HOLIDAY%20packages." 
+                   target="_blank" class="p-8 border border-slate-100 rounded-3xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-50 transition bg-white group">
+                    <div class="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <h4 class="font-bold text-sm mb-2 uppercase">Holidays</h4>
+                    <p class="text-xs text-slate-500 mb-4">Curated Tours</p>
+                    <span class="text-[10px] text-blue-600 font-bold uppercase group-hover:underline">Browse Deals</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 text-white pt-24 pb-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12 mb-20">
+                <div class="lg:col-span-2">
+                    <h4 class="text-2xl font-bold mb-6 italic uppercase tracking-tighter">JEKAFLY®</h4>
+                    <p class="text-slate-400 max-w-sm mb-8 leading-relaxed text-sm">
+                        Digital travel brand of Kazwhale Concepts Limited. Bringing movement, structured facilitation, and reliable travel advice to your screen.
+                    </p>
+                    <!-- Social/WhatsApp Link -->
+                    <div class="flex items-center gap-4">
+                        <a href="https://wa.me/2348186537678" target="_blank" class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl hover:bg-white/10 transition">
+                            <i class="fab fa-whatsapp text-green-400"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Connect on WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] text-blue-500 mb-8">Direct Access</h5>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#home" class="hover:text-white transition">Back to Top</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Service Modules</a></li>
+                        <li><a href="https://wa.me/2348186537678?text=Legal%20Inquiry" class="hover:text-white transition italic">Legal Hub</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="font-bold text-[10px] uppercase tracking-[0.3em] text-blue-500 mb-8">Admin Detail</h5>
+                    <div class="space-y-4 text-slate-400 text-sm font-medium">
+                        <p>Adewale Kasali, Brand Lead</p>
+                        <p>kazwhaleconcepts@gmail.com</p>
+                        <p class="text-[10px] italic">Powered by Kazwhale Concepts Limited</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between gap-6">
+                <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em]">
+                    &copy; 2026 KAZWHALE CONCEPTS LIMITED.
+                </p>
+                <div class="flex gap-4">
+                    <i class="fas fa-shield-halved text-slate-800"></i>
+                    <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.2em] italic">Your Journey. Simplified.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
